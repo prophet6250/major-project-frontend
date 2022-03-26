@@ -15,18 +15,12 @@ const submitEvent = (ev) => {
     return;
   }
 
-  let data = {
-    essay: inputBuf.value,
-  };
-
-  let config = {
+  fetch('http://localhost:3000/request', {
     method: 'POST',
     mode: 'cors',
     headers: {'Content-Type': 'application/json'},
-    body: data,
-  };
-
-  fetch('http://localhost:3000/request', config)
+    body: JSON.stringify({essay: inputBuf.value}),
+  })
   .then(response => response.json())
   .then(response => console.log(response))
   .catch(err => console.error(err));
