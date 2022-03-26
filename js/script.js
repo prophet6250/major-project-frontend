@@ -15,24 +15,21 @@ const submitEvent = (ev) => {
     return;
   }
 
-  let data = {essay: inputBuf.value};
+  let data = {
+    essay: inputBuf.value,
+  };
 
-  // Axios version
-  axios.post('localhost:3000/request', data)
+  let config = {
+    method: 'POST',
+    mode: 'cors',
+    headers: {'Content-Type': 'application/json'},
+    body: data,
+  };
+
+  fetch('http://localhost:3000/request', config)
+  .then(response => response.json())
   .then(response => console.log(response))
-  .catch(err => console.log(err));
-
-  // fetch API version
-  // fetch('localhost:3000/request', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: JSON.stringify(data),
-  // })
-  // .then(response => response.json())
-  // .then(data => console.log(`Success: ${data}`))
-  // .catch(err => console.error(err));
+  .catch(err => console.error(err));
 };
 
 const clearEvent = (ev) => {
