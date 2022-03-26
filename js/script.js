@@ -1,37 +1,51 @@
-const MAX_SIZE = 30000; // max character limit of 30k chars (approx 8000 words)
+const MAX_SIZE = 30000; // approx 7k-8k words @4.5 characters per word
 
-const submitEvent = (ev)=>{
-  ev.preventDefault(); // prevent default "submit" behavior
-  
+const submitEvent = (ev) => {
+  ev.preventDefault();
+
   const inputBuf = document.querySelector('.buf.input');
   const outputBuf = document.querySelector('.buf.output');
-  
-  // crude, ik. will enhance it later
+
+  // do proper error handling here
   if (inputBuf.length > MAX_SIZE) {
-    alert('no...');
+    const err_msg = 'ERROR: input size too big! Clear the buffer and enter a smaller text';
+
+    console.error(err_msg);
+    alert(err_msg);
     return;
   }
 
-  // will modify this to actually store the input contents on disk
-  localStorage.setItem('UserInput', inputBuf.value);
+  let data = {essay: inputBuf.value};
 
-  inputBuf.value = '';
-  outputBuf.value = localStorage.getItem('UserInput');
+  // Axios version
+  axios.post('localhost:3000/request', data)
+  .then(response => console.log(response))
+  .catch(err => console.log(err));
+
+  // fetch API version
+  // fetch('localhost:3000/request', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: JSON.stringify(data),
+  // })
+  // .then(response => response.json())
+  // .then(data => console.log(`Success: ${data}`))
+  // .catch(err => console.error(err));
 };
 
-const clearEvent = (ev)=>{
+const clearEvent = (ev) => {
   ev.preventDefault();
-  
+
   const inputBuf = document.querySelector('.buf.input');
   const outputBuf = document.querySelector('.buf.output');
-  
+
   inputBuf.value = '';
   outputBuf.value = '';
-  
-  localStorage.removeItem('UserInput');
 };
 
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('submit-btn').addEventListener('click', submitEvent);
   document.getElementById('clear-btn').addEventListener('click', clearEvent);
 });
