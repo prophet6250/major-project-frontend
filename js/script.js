@@ -22,7 +22,12 @@ const submitEvent = (ev) => {
     body: JSON.stringify({essay: inputBuf.value}),
   })
   .then(response => response.json())
-  .then(response => console.log(response))
+  .then(response => {
+    let output = '';
+    for (let key in response) {
+      console.log(response[key]);
+    }
+  })
   .catch(err => console.error(err));
 };
 
