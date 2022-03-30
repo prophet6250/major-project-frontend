@@ -1,31 +1,36 @@
-const MAX_SIZE = 30000; // approx 7k-8k words @4.5 characters per word
-
 const submitEvent = (ev) => {
   ev.preventDefault();
 
   const inputBuf = document.querySelector('.buf.input');
   const outputBuf = document.querySelector('.buf.output');
 
-  // do proper error handling here
-  if (inputBuf.length > MAX_SIZE) {
-    const err_msg = 'ERROR: input size too big! Clear the buffer and enter a smaller text';
-
-    console.error(err_msg);
-    alert(err_msg);
-    return;
-  }
-
-  fetch('http://localhost:3000/request', {
+  const options = {
     method: 'POST',
     mode: 'cors',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({essay: inputBuf.value}),
-  })
-  .then(response => response.json())
-  .then(response => {
-    let output = '';
-    for (let key in response) {
-      console.log(response[key]);
+  };
+
+  /*
+    DESIGN NOTE:
+    I could've used form submission to send POST requests.
+    I used fetch API since FormData was complicated to send as request.
+    This is intentional.
+  */
+  fetch('http://localhost:3000/request', options)
+  .then (res => res.json())
+  .then(res => {
+    console.log(res);
+
+    /*
+      ADD FEATURE:
+      convert outputBuf to div in phase/beta, highlight different keys with
+      different colors. use toggleClass() on different divs/spans.
+    */
+    for (let key in res) {
+      if (key !== 'essay') {
+        outputBuf.value += `${key.toUpperCase()}: ${res[key]}\n`;
+      }
     }
   })
   .catch(err => console.error(err));
