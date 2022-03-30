@@ -5,18 +5,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/app.js" defer></script>
+  <script src="js/script.js" defer></script>
   <title>Feedback on Student Writing</title>
 </head>
 <body>
   <h1>Feedback on Student Writing</h1>
   <div id="main">
-    <textarea name="input" class="buf input" cols="80" rows="30"></textarea>
+    <textarea name="input" class="buf input" cols="80" rows="25" spellcheck="true" maxlength="20000" placeholder="Enter your essay in plaintext here..."></textarea>
     <div id="buttons">
       <button type="submit" id='submit-btn' class="btn brown-btn">➔</button>
       <button type="clear" id='clear-btn' class="btn grey-btn">Clear</button>
     </div>
-    <textarea name="output" class="buf output" cols="80" rows="30"></textarea>
+    <textarea name="output" class="buf output" cols="80" rows="25" readonly="true" placeholder="Output will be shown here..."></textarea>
   </div>
 </body>
 </html>
