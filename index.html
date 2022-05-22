@@ -13,6 +13,11 @@
   <div id="main">
     <textarea name="input" class="buf input" cols="80" rows="25" spellcheck="true" maxlength="20000" placeholder="Enter your essay in plaintext here..."></textarea>
     <div id="buttons">
+      <select name="models" id="model-selector" class="btn black-btn">
+        <option value="roberta">RoBERTa</option>
+        <option value="deberta">DeBERTa</option>
+        <option value="longformer">Longformer</option>
+      </select>
       <button type="submit" id='submit-btn' class="btn brown-btn">➔</button>
       <button type="clear" id='clear-btn' class="btn grey-btn">Clear</button>
     </div>

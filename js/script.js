@@ -3,12 +3,19 @@ const submitEvent = (ev) => {
 
   const inputBuf = document.querySelector('.buf.input');
   const outputBuf = document.querySelector('.buf.output');
+  const modelSelector = document.getElementById('model-selector');
+
+  const payload = {
+    essay: inputBuf.value,
+    // this is temporary, change this depending on user choice
+    modelName: modelSelector.value,
+  };
 
   const options = {
     method: 'POST',
     mode: 'cors',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({essay: inputBuf.value}),
+    body: JSON.stringify(payload),
   };
 
   /*
@@ -27,6 +34,7 @@ const submitEvent = (ev) => {
       convert outputBuf to div in phase/beta, highlight different keys with
       different colors. use toggleClass() on different divs/spans.
     */
+
     for (let key in res) {
       if (key !== 'essay') {
         outputBuf.value += `${key.toUpperCase()}: ${res[key]}\n`;

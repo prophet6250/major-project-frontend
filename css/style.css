@@ -74,7 +74,7 @@ h1 {
 	display: block;
 	text-decoration: none;
 	margin: 50px 30px;
-	width: 80px;
+	width: 120px;
 	font-size: 16px;
 	padding: 10px;
 	border-radius: 50px;
@@ -87,9 +87,9 @@ h1 {
 	transform: scale(1.1);
 }
 
-.blue-btn {
+.black-btn {
 	color: #EEEEEE;
-	background-color: #339DFF;
+	background-color: #393E46;
 }
 
 .brown-btn {
