@@ -67,6 +67,55 @@ h1 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-wrap: wrap;
+}
+
+.buf.output {
+	color: #EDEDED;
+	background-color: #222831;
+	width: 824px;
+	height: 529px;
+	overflow: auto;
+	font-family: 'Times New Roman', Times, serif;
+	padding: 10px;
+}
+
+.color-code {
+	margin: 50px;
+}
+
+.buf.input {
+	padding: 10px;
+}
+
+.class-lead {
+	padding: 5px;
+  background-color: lightblue;
+	color: black;
+}
+
+.class-claim {
+	padding: 5px;
+  background-color: lightcoral;
+	color: black;
+}
+
+.class-position {
+	padding: 5px;
+  background-color: lightsalmon;
+	color: black;
+}
+
+.class-evidence {
+	padding: 5px;
+  background-color: lightgreen;
+	color: black;
+}
+
+.class-conclusion {
+	padding: 5px;
+  background-color: lightyellow;
+	color: black;
 }
 
 .btn {
@@ -74,7 +123,7 @@ h1 {
 	display: block;
 	text-decoration: none;
 	margin: 50px 30px;
-	width: 80px;
+	width: 120px;
 	font-size: 16px;
 	padding: 10px;
 	border-radius: 50px;
@@ -87,9 +136,9 @@ h1 {
 	transform: scale(1.1);
 }
 
-.blue-btn {
+.black-btn {
 	color: #EEEEEE;
-	background-color: #339DFF;
+	background-color: #393E46;
 }
 
 .brown-btn {

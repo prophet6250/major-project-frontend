@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
   <title>Feedback on Student Writing</title>
 </head>
 <body>
@@ -13,10 +13,22 @@
   <div id="main">
     <textarea name="input" class="buf input" cols="80" rows="25" spellcheck="true" maxlength="20000" placeholder="Enter your essay in plaintext here..."></textarea>
     <div id="buttons">
+      <select name="models" id="model-selector" class="btn black-btn">
+        <option value="deberta">DeBERTa</option>
+        <option value="bigbird">BigBird</option>
+        <option value="longformer">Longformer</option>
+      </select>
       <button type="submit" id='submit-btn' class="btn brown-btn">➔</button>
       <button type="clear" id='clear-btn' class="btn grey-btn">Clear</button>
     </div>
-    <textarea name="output" class="buf output" cols="80" rows="25" readonly="true" placeholder="Output will be shown here..."></textarea>
+    <div class="buf output"></div>
+    <div class="color-code">
+      <span class="class-lead">LEAD</span>
+      <span class="class-claim">CLAIM</span>
+      <span class="class-position">POSITION</span>
+      <span class="class-evidence">EVIDENCE</span>
+      <span class="class-conclusion">CONCLUDING STATEMENT</span>
+    </div>
   </div>
 </body>
 </html>
