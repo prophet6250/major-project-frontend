@@ -1,0 +1,157 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* main css starts here */
+body {
+	background-color: #222831;
+}
+textarea {
+	background-color: #393E46;
+	color: #EDEDED;
+	border: none;
+}
+h1 {
+	font-size: 50px;
+	text-align: center;
+	color: #EDEDED;
+}
+
+#main {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.buf.output {
+	color: #EDEDED;
+	background-color: #222831;
+	width: 824px;
+	height: 529px;
+	overflow: auto;
+	font-family: 'Times New Roman', Times, serif;
+	padding: 10px;
+}
+
+.color-code {
+	margin: 50px;
+}
+
+.buf.input {
+	padding: 10px;
+}
+
+.class-lead {
+	padding: 5px;
+  background-color: lightblue;
+	color: black;
+}
+
+.class-claim {
+	padding: 5px;
+  background-color: lightcoral;
+	color: black;
+}
+
+.class-position {
+	padding: 5px;
+  background-color: lightsalmon;
+	color: black;
+}
+
+.class-evidence {
+	padding: 5px;
+  background-color: lightgreen;
+	color: black;
+}
+
+.class-conclusion {
+	padding: 5px;
+  background-color: lightyellow;
+	color: black;
+}
+
+.btn {
+	border: none;
+	display: block;
+	text-decoration: none;
+	margin: 50px 30px;
+	width: 120px;
+	font-size: 16px;
+	padding: 10px;
+	border-radius: 50px;
+	text-align: center;
+	cursor: pointer;
+	transition: transform 0.25s;
+}
+
+.btn:hover {
+	transform: scale(1.1);
+}
+
+.black-btn {
+	color: #EEEEEE;
+	background-color: #393E46;
+}
+
+.brown-btn {
+	color: #EEEEEE;
+	background-color: #D65A31;
+}
+
+.grey-btn {
+	color: #EEEEEE;
+	background-color: darkslategray;
+}
+
+textarea {
+	resize: none;
+	font-family: 'Times New Roman', Times, serif;
+}
